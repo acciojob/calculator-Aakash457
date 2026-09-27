@@ -10,7 +10,7 @@ for (let i = 0; i <= 9; i++) {
   });
 }
 
-// Decimal button
+// Decimal
 document.getElementById("dot").addEventListener("click", function () {
   expression += ".";
   input.value = expression;
@@ -43,10 +43,31 @@ document.getElementById("divide").addEventListener("click", function () {
 // Answer
 document.getElementById("ans").addEventListener("click", function () {
   try {
+    // Explicit division by zero handling
+    if (expression.includes("/")) {
+      let parts = expression.split("/");
+
+      let numerator = Number(parts[0]);
+      let denominator = Number(parts[1]);
+
+      if (denominator === 0) {
+        if (numerator === 0) {
+          input.value = "NaN";
+          expression = "NaN";
+        } else {
+          input.value = "Infinity";
+          expression = "Infinity";
+        }
+
+        return;
+      }
+    }
+
     let result = eval(expression);
 
     input.value = result;
     expression = result.toString();
+
   } catch (error) {
     input.value = "Error";
     expression = "";
