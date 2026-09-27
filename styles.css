@@ -1,2 +1,100 @@
+* {
+  box-sizing: border-box;
+}
 
-/* Your CSS Code here. */
+body {
+  margin: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+.calculator {
+  width: 320px;
+  padding: 20px;
+
+  background-color: #222;
+  border-radius: 15px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#input {
+  width: 100%;
+  height: 60px;
+
+  margin-bottom: 15px;
+  padding: 10px;
+
+  border: none;
+  border-radius: 10px;
+
+  background-color: white;
+
+  text-align: right;
+  font-size: 30px;
+}
+
+.buttons {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 10px;
+}
+
+button {
+  height: 55px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  background-color: #444;
+  color: white;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#plus,
+#minus,
+#multiply,
+#divide {
+  background-color: #f39c12;
+}
+
+#plus:hover,
+#minus:hover,
+#multiply:hover,
+#divide:hover {
+  background-color: #e67e22;
+}
+
+#ans {
+  background-color: #27ae60;
+}
+
+#ans:hover {
+  background-color: #219150;
+}
+
+#clr {
+  background-color: #e74c3c;
+}
+
+#clr:hover {
+  background-color: #c0392b;
+}
+
+.zero {
+  grid-column: span 3;
+}
